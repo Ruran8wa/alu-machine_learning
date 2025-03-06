@@ -1,19 +1,30 @@
 #!/usr/bin/env python3
-'''
-Module that adds two arrays
-'''
+
+"""
+Module `4-line_up`
+This module contains a function that adds two arrays
+element-wise
+"""
 
 
 def add_arrays(arr1, arr2):
-    '''
-    Returns a new array that adds two other arrays together
-    '''
-    n1 = len(arr1)
-    n2 = len(arr2)
+    """
+    Adds two arrays element-wise.
+
+    Args:
+        arr1 (list of int/float): The first array.
+        arr2 (list of int/float): The second array.
+
+    Returns:
+        list of int/float: A new list with element-wise sums.
+        None: If the arrays are not of the same shape.
+    """
+
+    if len(arr1) != len(arr2):
+        return None
     result = []
 
-    if n1 == n2:
-        for i in range(n1):
-            result.append(arr1[i] + arr2[i])
-        return result
-    return None
+    for i in range(len(arr1)):
+        result.append(arr1[i] + arr2[i])
+
+    return result

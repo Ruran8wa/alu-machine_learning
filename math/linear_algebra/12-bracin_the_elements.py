@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-'''
-Module that performs element-wise operations on two matrices
-'''
+"""
+Module `12-bracin_the_elements`
+This module contains a function that
+that performs element-wise addition,
+subtraction, multiplication, and division:
+"""
 
 
 def np_elementwise(mat1, mat2):
-    '''
-    Module that performs element-wise operations on two matrices
-    '''
+    """
+    This function add, subtract, multiply, divide
+    """
     return (mat1 + mat2, mat1 - mat2, mat1 * mat2, mat1 / mat2)

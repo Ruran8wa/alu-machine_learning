@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-'''
-This module contains a function that returns a transposed matrix
-'''
+
+"""
+Module `3-flip_me_over`
+This is the function that transpose a matrix
+"""
 
 
 def matrix_transpose(matrix):
-    '''
-    Returns s atransposed matrix based on the arguments given
-    '''
-    r = len(matrix)
-    c = len(matrix[0])
+    """
+    Returns the transpose of a 2D matrix.
 
-    transposed = [[None for _ in range(r)] for _ in range(c)]
-    for i in range(r):
-        for j in range(c):
-            transposed[j][i] = matrix[i][j]
-    return transposed
+    Args:
+        matrix (list of lists): The input 2D matrix.
+
+    Returns:
+        list of lists: The transposed matrix.
+    """
+    return [list(row) for row in zip(*matrix)]

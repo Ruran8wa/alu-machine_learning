@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-'''
-Module that transposes a numpy.ndarray
-'''
+"""
+Module `11-the_western_exchange`
+This module contains a function that transposes matrix
+"""
 
 
 def np_transpose(matrix):
-    '''
-    Returns the transpose of a numpy.ndarray
-    '''
-    return matrix.transpose()
+    """
+    This function that transpose a matrix a numpy.ndarray
+    """
+    return matrix.T

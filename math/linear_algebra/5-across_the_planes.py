@@ -1,24 +1,35 @@
 #!/usr/bin/env python3
-'''
-Defines a function that adds two two-dimensional arrays
-'''
+
+"""
+Module `5-across_the_planes`
+This module contains a function that adds two matrices element-wise
+"""
 
 
 def add_matrices2D(mat1, mat2):
-    '''
-    Returns a new array that adds two other two-dimesional arrays
-    '''
-    r1 = len(mat1)
-    c1 = len(mat1[0])
-    r2 = len(mat2)
-    c2 = len(mat2[0])
+    """
+    Adds two 2D matrices element-wise.
 
-    if r1 == r2 and c1 == c2:
-        matrix = [[None for _ in range(c1)] for _ in range(r1)]
-        for r in range(r1):
-            for c in range(c1):
-                matrix[r][c] = mat1[r][c] + mat2[r][c]
+    Args:
+        mat1 (list of lists of int/float): The first matrix.
+        mat2 (list of lists of int/float): The second matrix.
 
-        return matrix
+    Returns:
+        list of lists of int/float: A new matrix with element-wise sums.
+        None: If the matrices are not the same shape.
+    """
 
-    return None
+    if len(mat1) != len(mat2):
+        return None
+
+    for row1, row2 in zip(mat1, mat2):
+        if len(row1) != len(row2):
+            return None
+
+    result = []
+
+    for i in range(len(mat1)):
+        row_sum = [mat1[i][j] + mat2[i][j] for j in range(len(mat1[i]))]
+        result.append(row_sum)
+
+    return result
